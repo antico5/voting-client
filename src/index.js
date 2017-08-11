@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Voting from './Voting';
 import './index.css';
 
+const pair = ['Trainspoting', 'Ice Age']
+
 ReactDOM.render(
-  <App />,
+  <Voting pair={pair} />,
   document.getElementById('root')
 );
