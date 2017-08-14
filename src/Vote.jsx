@@ -6,11 +6,11 @@ export default class Vote extends PureComponent {
   }
 
   hasVotedFor(entry) {
-    return this.props.votedEntry == entry
+    return this.props.votedEntry === entry
   }
 
   getPair() {
-    return this.props.pair || []
+    return this.props.pair || ['Ice Age', 'Trainspotting']
   }
 
   render() {
