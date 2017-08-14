@@ -6,6 +6,6 @@ import './index.css';
 const pair = ['Trainspoting', 'Ice Age']
 
 ReactDOM.render(
-  <Voting pair={pair} />,
+  <Voting pair={pair} winner='Trainspoting' />,
   document.getElementById('root')
 );
