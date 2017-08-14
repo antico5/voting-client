@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import {List} from 'immutable'
 
 export default class Vote extends PureComponent {
   isDisabled() {
@@ -10,7 +11,7 @@ export default class Vote extends PureComponent {
   }
 
   getPair() {
-    return this.props.pair || ['Ice Age', 'Trainspotting']
+    return this.props.pair || List.of('Ice Age', 'Trainspotting')
   }
 
   render() {
