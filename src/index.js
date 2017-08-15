@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {Route, HashRouter} from 'react-router-dom'
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
+import io from 'socket.io-client'
 
 import {VotingContainer} from './Voting';
 import {ResultsContainer} from './Results';
@@ -11,14 +12,9 @@ import reducer from './reducer'
 
 const store = createStore(reducer)
 
-store.dispatch({
-  type: 'SET_STATE',
-  state: {
-    vote: {
-      pair: ['Harry Potter', 'Ice Age'],
-      tally: {'Harry Potter': 2, 'Ice Age': 5}
-    }
-  }
+const socket = io(`${location.protocol}//${location.hostname}:8090`)
+socket.on('state', (state) => {
+  store.dispatch({type: 'SET_STATE', state: state})
 })
 
 ReactDOM.render(

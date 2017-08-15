@@ -6,11 +6,11 @@ import Winner from './Winner'
 
 export class Results extends PureComponent {
   getPair() {
-    return this.props.pair || List.of('Ice Age', 'Trainspotting')
+    return this.props.pair || []
   }
 
   getTally(){
-    return this.props.tally || Map({'Trainspotting': 2})
+    return this.props.tally || Map()
   }
 
   getVotes(entry){
