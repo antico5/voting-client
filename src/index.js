@@ -9,12 +9,13 @@ import {VotingContainer} from './Voting';
 import {ResultsContainer} from './Results';
 
 import reducer from './reducer'
+import {setState} from './action_creators'
 
 const store = createStore(reducer)
 
 const socket = io(`${location.protocol}//${location.hostname}:8090`)
 socket.on('state', (state) => {
-  store.dispatch({type: 'SET_STATE', state: state})
+  store.dispatch(setState(state))
 })
 
 ReactDOM.render(

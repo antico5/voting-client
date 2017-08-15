@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import {Map, List} from 'immutable'
+import {Map} from 'immutable'
 import {connect} from 'react-redux'
 
 import Winner from './Winner'
