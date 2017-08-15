@@ -1,8 +1,10 @@
 import React, { PureComponent } from 'react';
 import {Map, List} from 'immutable'
+import {connect} from 'react-redux'
+
 import Winner from './Winner'
 
-export default class Results extends PureComponent {
+export class Results extends PureComponent {
   getPair() {
     return this.props.pair || List.of('Ice Age', 'Trainspotting')
   }
@@ -35,3 +37,13 @@ export default class Results extends PureComponent {
     )
   }
 }
+
+function mapStateToProps(state){
+  return {
+    tally: state.getIn(['vote','tally']),
+    pair: state.getIn(['vote','pair']),
+    winner: state.get('winner')
+  }
+}
+
+export const ResultsContainer = connect(mapStateToProps)(Results)

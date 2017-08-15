@@ -5,7 +5,7 @@ import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 
 import {VotingContainer} from './Voting';
-import Results from './Results';
+import {ResultsContainer} from './Results';
 
 import reducer from './reducer'
 
@@ -16,7 +16,7 @@ store.dispatch({
   state: {
     vote: {
       pair: ['Harry Potter', 'Ice Age'],
-      tally: {'Harry Potter': 2}
+      tally: {'Harry Potter': 2, 'Ice Age': 5}
     }
   }
 })
@@ -26,7 +26,7 @@ ReactDOM.render(
     <HashRouter>
       <div>
         <Route exact path='/' component={VotingContainer}/>
-        <Route path='/results' component={Results}/>
+        <Route path='/results' component={ResultsContainer}/>
       </div>
     </HashRouter>
   </Provider>,
