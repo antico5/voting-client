@@ -26,14 +26,11 @@ export class Results extends PureComponent {
           <div className='tally'>
             { this.getPair().map( entry =>
               <div className='entry' key={entry}>
-                <h1>{entry}</h1>
-                <div className='voteCount'>{this.getVotes(entry)}</div>
+                <h1>{entry} <span className='voteCount'>{this.getVotes(entry)}</span></h1>
               </div>
             )}
-         </div>
-         <div className='management'>
-           <button ref='next' onClick={this.props.next} className='next'>Next</button>
-         </div>
+            <button ref='next' onClick={this.props.next} className='next'>Next</button>
+          </div>
         </div>
     )
   }

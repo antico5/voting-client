@@ -16,7 +16,8 @@ body {
   flex: 1;
   background-color: #6b3eb0;
   color: white;
-  border: 1px solid white;
+  border: 0px;
+  border-bottom: 1px solid white;
 }
 
 .vote button:hover {
@@ -25,4 +26,29 @@ body {
 
 .vote button.voted {
   background-color: #31248c;
+}
+
+.results {
+  background-color: #6b3eb0;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.results .tally {
+  width: 500px;
+}
+
+.results .tally .voteCount {
+  float: right;
+}
+
+.results .tally .next {
+  border: 0px;
+  background-color: #31248c;
+  padding: 10px 30px;
+  float: right;
 }
