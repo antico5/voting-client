@@ -30,6 +30,7 @@ export class Results extends PureComponent {
               </div>
             )}
             <button ref='next' onClick={this.props.next} className='next'>Next</button>
+            <h3>{this.props.round}</h3>
           </div>
         </div>
     )
@@ -40,7 +41,8 @@ function mapStateToProps(state){
   return {
     tally: state.getIn(['vote','tally']),
     pair: state.getIn(['vote','pair']),
-    winner: state.get('winner')
+    winner: state.get('winner'),
+    round: state.getIn(['vote','round'])
   }
 }
 
