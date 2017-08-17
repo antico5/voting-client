@@ -28,7 +28,7 @@ body {
   background-color: #31248c;
 }
 
-.results {
+.results, .winner {
   background-color: #6b3eb0;
   color: white;
   height: 100vh;

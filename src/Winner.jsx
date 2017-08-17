@@ -5,7 +5,8 @@ export default class Winner extends PureComponent {
   render() {
     return (
       <div className="winner">
-        Winner is {this.props.winner}!
+        <b>Winner is</b>
+        <h2>{this.props.winner}</h2>
       </div>
     )
   }
