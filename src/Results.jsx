@@ -30,7 +30,6 @@ export class Results extends PureComponent {
               </div>
             )}
             <button ref='next' onClick={this.props.next} className='next'>Next</button>
-            <h3>{this.props.round}</h3>
           </div>
         </div>
     )
