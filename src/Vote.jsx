@@ -16,9 +16,12 @@ export default class Vote extends PureComponent {
   render() {
     return (
       <div className="vote">
+        <div className='round'>
+          <h4>Round {this.props.round}</h4>
+        </div>
         { this.getPair().map( entry =>
           <button key={entry}
-            onClick={() => this.props.vote(entry)} 
+            onClick={() => this.props.vote(entry)}
             disabled={this.isDisabled()}
             className={this.hasVotedFor(entry) ? 'voted' : ''}>
             <h1>{entry}</h1>
