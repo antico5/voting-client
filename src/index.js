@@ -15,11 +15,12 @@ import remoteActionMiddleware from './remote_action_middleware'
 import './index.css'
 
 const socket = io(`${location.protocol}//${location.hostname}:8090`)
+const store = createStore(reducer,applyMiddleware(remoteActionMiddleware(socket)));
+
 socket.on('state', (state) => {
   store.dispatch(setState(state))
 })
 
-const store = createStore(reducer,applyMiddleware(remoteActionMiddleware(socket)));
 
 ReactDOM.render(
   <Provider store={store}>

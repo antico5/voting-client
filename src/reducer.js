@@ -1,8 +1,8 @@
-import {Map, List, fromJS} from 'immutable';
+import {Map, fromJS} from 'immutable';
 
 function setState(state, newState){
   newState = fromJS(newState)
-  if (newState.getIn(['vote','round']) != state.getIn(['vote','round']))
+  if (newState.getIn(['vote','round']) !== state.getIn(['vote','round']))
     state = state.remove('hasVoted')
   return state.merge(newState)
 }
@@ -21,6 +21,8 @@ export default function(state = Map(), action) {
     return setState(state, action.state)
   case 'VOTE':
     return vote(state, action.entry)
+  default:
+    console.log('Unknown action: ', action)
   }
 
   return state;
