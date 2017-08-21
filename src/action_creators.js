@@ -19,3 +19,10 @@ export function next(){
     meta: {remote: true},
   }
 }
+
+export function setClientId(clientId){
+  return {
+    type: 'SET_CLIENT_ID',
+    clientId
+  }
+}
