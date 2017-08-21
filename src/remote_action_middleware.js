@@ -1,6 +1,8 @@
 export default socket => store => next => action => {
-  if(action.meta && action.meta.remote)
-    socket.emit('action', action)
+  if(action.meta && action.meta.remote){
+    const clientId = store.getState().get('clientId')
+    socket.emit('action', Object.assign(action, {clientId: clientId}))
+  }
 
   return next(action)
 }
